@@ -486,10 +486,22 @@ variable "public_subnet_tags" {
   default     = {}
 }
 
+variable "public_subnet_specific_tags" {
+  description = "Additional tags for each public subnet"
+  type        = map(map(string))
+  default     = []
+}
+
 variable "private_subnet_tags" {
   description = "Additional tags for the private subnets"
   type        = map(string)
   default     = {}
+}
+
+variable "private_subnet_specific_tags" {
+  description = "Additional tags for each private subnet"
+  type        = map(map(string))
+  default     = []
 }
 
 variable "outpost_subnet_tags" {

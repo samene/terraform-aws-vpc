@@ -377,6 +377,7 @@ resource "aws_subnet" "public" {
     },
     var.tags,
     var.public_subnet_tags,
+    length(var.public_subnet_specific_tags) > 0 ? try(var.public_subnet_specific_tags[element(var.azs, count.index)],{}) : {},
   )
 }
 
@@ -404,6 +405,7 @@ resource "aws_subnet" "private" {
     },
     var.tags,
     var.private_subnet_tags,
+    length(var.private_subnet_specific_tags) > 0 ? try(var.private_subnet_specific_tags[element(var.azs, count.index)],{}) : {},
   )
 }
 
