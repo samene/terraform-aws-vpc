@@ -489,7 +489,7 @@ variable "public_subnet_tags" {
 variable "public_subnet_specific_tags" {
   description = "Additional tags for each public subnet"
   type        = map(map(string))
-  default     = []
+  default     = {}
 }
 
 variable "private_subnet_tags" {
