@@ -501,7 +501,7 @@ variable "private_subnet_tags" {
 variable "private_subnet_specific_tags" {
   description = "Additional tags for each private subnet"
   type        = map(map(string))
-  default     = []
+  default     = {}
 }
 
 variable "outpost_subnet_tags" {
